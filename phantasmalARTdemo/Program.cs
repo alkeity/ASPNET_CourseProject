@@ -49,6 +49,7 @@ namespace PhantasmalARTdemo
             builder.Services.AddScoped<IArtService, ArtService>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IStorageService, StorageService>();
+            builder.Services.AddScoped<IArtCommentService, ArtCommentService>();
             builder.Services.AddScoped<UserAuthFilter>();
 
             var app = builder.Build();

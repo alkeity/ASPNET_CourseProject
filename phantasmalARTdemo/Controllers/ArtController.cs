@@ -50,7 +50,7 @@ namespace PhantasmalARTdemo.Controllers
 
         [HttpGet]
         [Route("{username}/gallery/{artID:Guid}")]
-        public IActionResult ArtDisplay(string username, Guid artID)
+        public IActionResult ArtDisplay(string username, Guid artID, int page = 0)
         {
             ArtDTO art;
             try
@@ -61,9 +61,13 @@ namespace PhantasmalARTdemo.Controllers
             {
                 return NotFound();
             }
+
+            Page<ArtCommentDTO> comments = _artCommentService.GetComments(artID, page);
+
             ArtDisplayView artView = new ArtDisplayView()
             {
-                Art = art
+                Art = art,
+                Comments = comments
             };
             return View(artView);
         }
