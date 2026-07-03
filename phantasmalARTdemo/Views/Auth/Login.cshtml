@@ -37,7 +37,11 @@
                     @Html.PasswordFor(Model => Model.User.Password, htmlAttributes: new { @class = "form-control", id = "password-login", placeholder = "Password", required = "required" })
                     @Html.LabelFor(Model => Model.User.Password, htmlAttributes: new { @class = "form-label", @for = "password-login" })
                 </div>
-                <button type="submit" class="btn btn-primary w-100 mb-4">Log In</button>
+                <div class="form-floating form-outline d-flex mb-3">
+                    <button type="submit" class="btn btn-primary mb-4 me-1 w-50">Log In</button>
+                    <a class="btn btn-outline-secondary mb-4 flex-grow-1" href="javascript:history.back()" aria-label="Go back to previous page">Go Back</a>
+                </div>
+                
             }
         </div>
     </div>

@@ -5,7 +5,7 @@
 
 @model PhantasmalARTdemo.Models.Containers.BaseFormView<UserProfileDTO>
 
-<h1>Edit profile</h1>
+<h1 class="text-center">Edit profile</h1>
 
 @if (Model.Errors != null)
 {
@@ -21,7 +21,7 @@
     </div>
 }
 
-<div class="container form-container" style="max-width: 50vh">
+<div class="container form-container" style="max-width: 75vh">
     @using (Html.BeginForm("EditProfile", "User", FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" }))
     {
         <div class="form-floating form-outline flex-fill mb-3">
@@ -29,10 +29,13 @@
             @Html.LabelFor(Model => Model.Entity.Description, htmlAttributes: new { @class = "form-label", @for = "descr" })
         </div>
 
-        <button type="submit" class="btn btn-primary w-100 mb-4">Submit</button>
+        <div class="form-floating form-outline d-flex mb-3">
+            <button type="submit" class="btn btn-primary mb-4 me-1 w-50">Submit</button>
+            <a class="btn btn-outline-secondary mb-4 flex-grow-1" href="javascript:history.back()" aria-label="Go back to previous page">Go Back</a>
+        </div>
     }
 
-    <a class="btn btn-primary w-100 mb-4" style="z-index: 1;" asp-controller="User" asp-action="Delete">
+    <a class="btn btn-outline-danger w-100 mb-4" style="z-index: 1;" asp-controller="User" asp-action="Delete">
         Delete your account
     </a>
 </div>

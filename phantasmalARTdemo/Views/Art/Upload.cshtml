@@ -19,7 +19,7 @@
     </div>
 }
 
-<div class="container form-container" style="max-width: 50vh">
+<div class="container form-container" style="max-width: 75vh">
     @using (Html.BeginForm("Upload", "Art", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <div class="form-outline flex-fill mb-3">
@@ -34,6 +34,9 @@
             @Html.LabelFor(Model => Model.ArtDTO.Description, htmlAttributes: new { @class = "form-label", @for = "title" })
         </div>
 
-        <button type="submit" class="btn btn-primary w-100 mb-4">Submit</button>
+        <div class="form-floating form-outline d-flex mb-3">
+            <button type="submit" class="btn btn-primary mb-4 me-1 w-50">Submit</button>
+            <a class="btn btn-outline-secondary mb-4 flex-grow-1" href="javascript:history.back()" aria-label="Go back to previous page">Go Back</a>
+        </div>
     }
 </div>
